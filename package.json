@@ -1,0 +1,11 @@
+{
+  "name": "find-two-solutions",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Ben (OutdatedVersion)",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "inquirer": "^3.3.0"
+  }
+}

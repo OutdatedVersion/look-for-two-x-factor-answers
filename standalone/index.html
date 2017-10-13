@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>factoring thingy</title>
+
+    <style>
+        body {
+            background: #c94b4b;
+            background: -webkit-linear-gradient(83deg, #4b134f, #c94b4b);
+            background: linear-gradient(83deg, #4b134f, #c94b4b);
+        }
+
+        label {
+            font-size: 26px;
+            font-family: 'Open Sans', sans-serif;
+            color: white;
+        }
+
+        .center {
+            text-align: center;
+        }
+
+        .spacer {
+            content: '\n';
+        }
+    </style>
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+</head>
+<body>
+    <div class="center">
+        <label for="add">add up to..</label>
+        <input type="text" name="add"></input>
+
+        <div class="spacer"></div>
+
+        <label for="multiply">multiply to..</label>
+        <input type="text" name="multiply"></input>
+    </div>
+
+    <script>
+        /**
+         * Take in the two numbers and factor out the required solutions for it. In the event
+         * that there is no actual solution, text will be returned stating so.
+         * 
+         * @param {Number} add The number that the two numbers must add up to
+         * @param {Number} product The number that the two numbers must multiply to
+         * @returns {String} The answer or text stating we couldn't find an answer
+         */
+        const solve = (add, product) => 
+        {
+            const insideRoot = add * add - 4 * product
+
+            if (insideRoot >= 0)
+            {
+                const b = Math.round((add + Math.sqrt(insideRoot)) / 2)
+                const a = Math.round(add - b)
+
+                return `Use ${a} and ${b}`
+            }
+            else return 'No real solution'
+        }
+    </script>
+</body>
+</html>
