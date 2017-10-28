@@ -13,7 +13,7 @@
             background: linear-gradient(83deg, #4b134f, #c94b4b);
         }
 
-        label {
+        label, span {
             font-size: 26px;
             font-family: 'Open Sans', sans-serif;
             color: white;
@@ -39,9 +39,25 @@
 
         <label for="multiply">multiply to..</label>
         <input type="text" name="multiply"></input>
+
+        <div class="spacer"></div>
+
+        <button onclick="process()">solve - tmp</button>
+
+        <span id="answer"></span>
     </div>
 
     <script>
+        const process = () =>
+        {
+            // remove button
+            document.getElementsByTagName('button')[0].remove()
+
+            const asNumbers = Array.from(document.getElementsByTagName('input')).map(element => parseInt(element.value))
+
+            document.getElementById('answer').innerText = solve(asNumbers[0], asNumbers[1])
+        }
+
         /**
          * Take in the two numbers and factor out the required solutions for it. In the event
          * that there is no actual solution, text will be returned stating so.
